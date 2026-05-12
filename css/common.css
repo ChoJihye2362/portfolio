@@ -1,0 +1,171 @@
+@charset 'utf-8';
+
+@import 'font.css';
+
+:root {
+	/* common color */
+	--color01:#e1e6ea;
+	--color02:#b7c9d4;
+	--color03:#8aa1b3;
+	--color04:#4f758e;
+	--color05:#3b596e;
+	--color06:#2b3e56;
+	--color07:#1b253d;
+	--color08:#0b1628;
+	--color09:#ff4d6d;
+
+	/* black */
+	--black01:#111;
+	--black02:#222;
+	--black03:#333;
+	--black04:#444;
+	--black05:#555;
+	--black06:#666;
+	--black07:#777;
+	--black08:#888;
+	--black09:#999;
+
+	/* black */
+	--black10:rgba(0, 0, 0, 0.1);
+	--black15:rgba(0, 0, 0, 0.15);
+	--black20:rgba(0, 0, 0, 0.2);
+	--black25:rgba(0, 0, 0, 0.25);
+	--black30:rgba(0, 0, 0, 0.3);
+	--black35:rgba(0, 0, 0, 0.35);
+	--black40:rgba(0, 0, 0, 0.4);
+	--black45:rgba(0, 0, 0, 0.45);
+	--black50:rgba(0, 0, 0, 0.5);
+	--black55:rgba(0, 0, 0, 0.55);
+	--black60:rgba(0, 0, 0, 0.6);
+	--black65:rgba(0, 0, 0, 0.65);
+	--black70:rgba(0, 0, 0, 0.7);
+	--black75:rgba(0, 0, 0, 0.75);
+	--black80:rgba(0, 0, 0, 0.8);
+	--black85:rgba(0, 0, 0, 0.85);
+	--black90:rgba(0, 0, 0, 0.9);
+	--black95:rgba(0, 0, 0, 0.95);
+	--black100:#000;
+
+	/* white */
+	--white00:rgba(255, 255, 255, 0);
+	--white10:rgba(255, 255, 255, 0.1);
+	--white12:rgba(255, 255, 255, 0.12);
+	--white14:rgba(255, 255, 255, 0.14);
+	--white15:rgba(255, 255, 255, 0.15);
+	--white20:rgba(255, 255, 255, 0.2);
+	--white25:rgba(255, 255, 255, 0.25);
+	--white30:rgba(255, 255, 255, 0.3);
+	--white35:rgba(255, 255, 255, 0.35);
+	--white40:rgba(255, 255, 255, 0.4);
+	--white45:rgba(255, 255, 255, 0.45);
+	--white50:rgba(255, 255, 255, 0.5);
+	--white55:rgba(255, 255, 255, 0.55);
+	--white60:rgba(255, 255, 255, 0.6);
+	--white65:rgba(255, 255, 255, 0.65);
+	--white70:rgba(255, 255, 255, 0.7);
+	--white75:rgba(255, 255, 255, 0.75);
+	--white80:rgba(255, 255, 255, 0.8);
+	--white85:rgba(255, 255, 255, 0.85);
+	--white90:rgba(255, 255, 255, 0.9);
+	--white95:rgba(255, 255, 255, 0.95);
+	--white100:#fff;
+
+	/* font-weight */
+	--font-weight-thin:100;
+	--font-weight-extralight:200;
+	--font-weight-light:300;
+	--font-weight-regular:400;
+	--font-weight-medium:500;
+	--font-weight-semibold:600;
+	--font-weight-bold:700;
+	--font-weight-extrabold:800;
+	--font-weight-black:900;
+	
+	/* mg,pd */
+	--padding-common: 2rem;
+}
+
+/* common */
+html{font-size:10px;}
+body{position:relative;font-family:'Paperlogy', sans-serif;font-weight:400;font-size:1.6rem;color:var(--text-color01);/* iOS �뱀젙 �띿뒪�� �뺣� 臾몄젣 �닿껐 */-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;overflow-x:hidden;color:var(--black01);}
+html.all-fixed,
+body.all-fixed{position:relative;/*height:100vh;*/overflow:hidden;}
+a{word-break:break-word;}
+img{max-width:100%;}
+address{font-style:normal;}
+input[type="text"], input[type="password"], button{font-family:inherit;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+button{border:none;cursor:pointer;}
+select::-ms-expand{display:none;}
+
+.wrap{background-color:var(--color01);}
+
+.font-paper{font-family:'Paperlogy', sans-serif;}
+.font-pretendard{font-family:'Pretendard', sans-serif;}
+.font-montserrat{font-family:'Montserrat', sans-serif;}
+
+.hide:not(caption){display:block;position:absolute;width:0;height:0;text-indent:-9999999px;overflow:hidden;}
+caption.hide{position:static;width:0;height:0;text-indent:-9999px;}
+.pc-hide{display:none !important;}
+.no-pd{padding:0 !important;}
+.no-pd-t{padding-top:0 !important;}
+.no-pd-b{padding-bottom:0 !important;}
+.no-mg{margin:0 !important;}
+.no-border{border:0 !important;}
+.no-before:before{display:none !important;}
+.no-after:after{display:none !important;}
+.object-fit img{width:100%;height:100%;object-fit:cover;}
+.object-fit-contain img{width:100%;height:100%;object-fit:contain;}
+.img-ratio{position:relative;height:0;background-repeat:no-repeat;background-position:center center;background-size:cover;}
+.img-ratio img{position:absolute;top:0;left:0;width:100%;height:100%;}
+
+.text-left{text-align:left !important;}
+.text-center{text-align:center !important;}
+.text-right{text-align:right !important;}
+.text-regular{font-weight:var(--font-weight-regular) !important;}
+.text-medium{font-weight:var(--font-weight-medium) !important;}
+.text-semibold{font-weight:var(--font-weight-semibold) !important;}
+.text-bold{font-weight:var(--font-weight-bold) !important;}
+.text-underline{text-decoration:underline !important;}
+.color-blue{color:var(--color26) !important}
+.pd-t08{padding-top:8px !important;}
+.pd-t10{padding-top:1rem !important;}
+.pd-t15{padding-top:1.5rem !important;}
+.pd-t20{padding-top:2rem !important;}
+.pd-t30{padding-top:3rem !important;}
+.pd-b10{padding-bottom:1rem !important;}
+.pd-b20{padding-bottom:2rem !important;}
+.pd-b30{padding-bottom:3rem !important;}
+.pd-b40{padding-bottom:4rem !important;}
+.pd-tb08{padding-top:8px !important;padding-bottom:8px !important;}
+.pd-tb10{padding-top:1rem !important;padding-bottom:1rem !important;}
+.pd-tb20{padding-top:2rem !important;padding-bottom:2rem !important;}
+.pd-l10{padding-left:1rem !important;}
+.pd-l20{padding-left:2rem !important;}
+.pd-lr20{padding-left:2rem !important;padding-right:2rem !important;}
+.mg-t5{margin-top:5px !important;}
+.mg-t10{margin-top:1rem !important;}
+.mg-t20{margin-top:2rem !important;}
+.mg-t30{margin-top:3rem !important;}
+.mg-t50{margin-top:5rem !important;}
+.mg-t60{margin-top:6rem !important;}
+.mg-t07{margin-top:0.7rem !important;}
+.mg-b10{margin-bottom:1rem !important;}
+.mg-b12{margin-bottom:1.2rem !important;}
+.mg-b20{margin-bottom:2rem !important;}
+.mg-b30{margin-bottom:3rem !important;}
+.mg-b40{margin-bottom:4rem !important;}
+.mg-tb10{margin-top:1rem !important;margin-bottom:1rem !important;}
+.mg-tb20{margin-top:2rem !important;margin-bottom:2rem !important;}
+.mg-l20{margin-left:2rem !important;}
+.no-mg-t{margin-top:0 !important;}
+.no-mg-b{margin-bottom:0 !important;}
+.no-pd-l{padding-left:0 !important;}
+
+@media screen and (max-width:1024.98px) {
+	/* common */
+	.pc-hide{display:block !important;}
+	.mobile-hide{display:none !important;}
+	
+	.zoom-in{display:block;position:absolute;bottom:0;right:0;margin:10px;width:30px;height:30px;}
+	.zoom-in img{width:100%;}
+}
