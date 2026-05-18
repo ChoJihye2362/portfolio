@@ -47,8 +47,31 @@
 .profile-bot-box .career-list > li::before{content:'';position:absolute;top:1.3rem;left:0;border-radius:50%;width:4px;height:4px;background:var(--color03);}
 
 /* Project */
-.project-wrap{padding:0 var(--padding-common) 10rem;}
+.page-project{position:relatve;overflow:hidden;}
+.project-wrap{position:relative;padding:0 var(--padding-common) 10rem;}
+.project-sticky-area{position:relative;min-height:100vh;min-height:100svh;box-sizing:border-box;}
 .project-tit01{padding:0 0 6rem;font-weight:var(--font-weight-bold);font-size:7.5rem;color:var(--color07);}
+.project-marquee-wrap{position:relative;margin-top:3rem;overflow:hidden;opacity:0.2;pointer-events:none;z-index:4;}
+.project-marquee-box{display:flex;gap:6rem;font-family:'Montserrat';font-size:clamp(3rem, 7vw, 13rem);font-weight:var(--font-weight-bold);line-height:1;text-transform:uppercase;white-space:nowrap;color:var(--color03);animation:projectMarquee 35s linear infinite;}
+.project-marquee-box p{flex-shrink:0;}
+@keyframes projectMarquee{
+	0%{
+		transform:translateX(0);
+	}
+	100%{
+		transform:translateX(-50%);
+	}
+}
+
+.project-flow-outer{position:absolute;left:0;bottom:8rem;width:100%;padding:0 var(--padding-common);box-sizing:border-box; pointer-events:none;z-index:10;}
+.project-flow-box{position:absolute;left: var(--padding-common);right: var(--padding-common);bottom:0;opacity:0;transform:translateY(100%);}
+.project-flow-inner-box{display:flex;align-items:flex-start;gap:5rem;width:100%;min-height:42rem;padding:4rem;backdrop-filter:blur(20px);pointer-events:auto;}
+.project-flow-inner-box.row-reverse{flex-direction:row-reverse;}
+.project-flow-img-box {overflow:hidden;}
+.project-flow-img-box-inner{}
+.project-flow-img-box img {}
+.project-flow-txt-box .txt01{font-weight:var(--font-weight-semibold);font-size:clamp(2rem, 2.3vw, 5rem);line-height:1.5;color:var(--color06);}
+
 .project-box > li{position:relative;border-bottom:1px solid var(--color02);z-index:1;}
 .project-box > li.is-hover{	z-index:100;}
 .project-box > li:first-of-type{border-top:1px solid var(--color02);}
@@ -103,6 +126,7 @@
 	.project-tit01{padding:0 0 2rem;font-size:2.7rem;}
 	.project-box > li .mini-tit{padding:2rem 1rem;}
 	.project-box > li .mini-tit span{font-size:1.6rem;}
+    .project-flow-inner-box{gap:1rem;padding:0;}
 
 	/* Contact */
 	.contact-wrap{padding:0 var(--padding-common) 10rem}

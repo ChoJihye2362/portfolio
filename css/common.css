@@ -4,15 +4,15 @@
 
 :root {
 	/* common color */
-	--color01:#e1e6ea;
-	--color02:#b7c9d4;
-	--color03:#8aa1b3;
-	--color04:#4f758e;
-	--color05:#3b596e;
-	--color06:#2b3e56;
-	--color07:#1b253d;
-	--color08:#0b1628;
-	--color09:#ff4d6d;
+	--color01: #eee9e1;  /* 가장 밝은 베이지 (배경) */
+	--color02: #d4c8b4;  /* 연한 모래 */
+	--color03: #b09e84;  /* 미디엄 웜 그레이 */
+	--color04: #8b7355;  /* 메인 브라운 (버튼, 강조) */
+	--color05: #6b5540;  /* 딥 브라운 */
+	--color06: #4a3828;  /* 다크 브라운 */
+	--color07: #2e1f0e;  /* 거의 블랙에 가까운 브라운 */
+	--color08: #1a1008;  /* 최다크 (텍스트, 배경 다크모드) */
+	--color09: #e8704a;  /* 포인트 — 테라코타 오렌지 */
 
 	/* black */
 	--black01:#111;

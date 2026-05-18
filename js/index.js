@@ -1,6 +1,7 @@
 var App = App || {};
 
 $(document).ready(function(){
+	gsap.registerPlugin(ScrollTrigger);
 	AOS.init({
 		offset: window.innerWidth <= 1024 ? 40 : 60,
 		duration: 800,
@@ -13,6 +14,8 @@ $(document).ready(function(){
 	App.mainVisualGsap.init();
 	// 프로필 이미지 GSAP
 	App.profileImgGsap.init();
+	// 프로젝트 2개 플로우
+	App.projectFlow.init();
 	// 프로젝트 리스트 호버 시 이미지
 	App.projectHover.init();
 	// 프로젝트에서 컨택트로 덮이는 효과
@@ -177,6 +180,86 @@ App.profileImgGsap = function () {
 			});
 		}
 	}
+}();
+//======================================================================
+// 프로젝트 2개 플로우
+//======================================================================
+App.projectFlow = function () {
+    return {
+        init: function () {
+            const section = document.querySelector('.page-project');
+            const stickyArea = document.querySelector('.project-sticky-area');
+            const flowItems = gsap.utils.toArray('.project-flow-box');
+
+            if (!section || !stickyArea || flowItems.length === 0) return;
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: stickyArea,
+                    start: 'top top',
+                    end: '+=260%', // 조금 더 여유 주기
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    // markers: true,
+                }
+            });
+
+            // 처음 상태
+            gsap.set(flowItems, {
+                yPercent: 100,
+                opacity: 0
+            });
+
+            // 1번째 박스 등장
+            tl.to(flowItems[0], {
+                yPercent: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'none'
+            })
+
+            // 잠깐 유지
+            .to(flowItems[0], {
+                yPercent: -30,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'none'
+            }, '+=0.2')
+
+            // 위로 사라짐
+            .to(flowItems[0], {
+                yPercent: -120,
+                opacity: 0,
+                duration: 1,
+                ease: 'none'
+            })
+
+            // 2번째 박스 등장
+            .to(flowItems[1], {
+                yPercent: 0,
+                opacity: 1,
+                duration: 1,
+                ease: 'none'
+            }, '-=0.2')
+
+            // 잠깐 유지
+            .to(flowItems[1], {
+                yPercent: -30,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'none'
+            }, '+=0.2')
+
+            // 위로 사라짐
+            .to(flowItems[1], {
+                yPercent: -120,
+                opacity: 0,
+                duration: 1,
+                ease: 'none'
+            });
+        }
+    }
 }();
 //======================================================================
 // 프로젝트 리스트 호버 시 이미지
